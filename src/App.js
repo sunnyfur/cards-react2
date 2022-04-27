@@ -1,17 +1,33 @@
-import Card from "./components/Card";
+import Card from './components/Card'
 
-import "./App.css";
+import styles from './App.css'
 
-import rates from "./mock/rates.json";
+import rates from './mock/rates.json'
 
 function App() {
   return (
-    <div className="App">
-      {rates.results.map((rate) => (
-        <Card name={rate.name}></Card>
-      ))}
+    <div className={styles.App}>
+      <div className={styles.wrapper}>
+        {rates.results.map((rate) => {
+          const isSelected = rate.cost === 550
+
+          return (
+            <Card
+              name={rate.name}
+              cost={rate.cost}
+              currency={rate.currency}
+              length={rate.length}
+              speed={rate.speed}
+              speedUnits={rate.speedUnits}
+              optional={rate.optional}
+              isSelected={isSelected}
+              color={rate.color}
+            />
+          )
+        })}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

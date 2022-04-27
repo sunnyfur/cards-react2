@@ -1,0 +1,80 @@
+$border-color: rgb(255, 255, 255);
+$blue: rgb(44, 193, 213);
+$green: rgb(34, 174, 143);
+$red: rgb(244, 106, 95);
+$black: rgb(51, 58, 68);
+$light-gray: rgb(248, 248, 248);
+$dark-gray: rgb(238, 238, 238);
+$text-header: white;
+$text-main: grey;
+$padding: 20px;
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+@mixin box-shadow() {
+  box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.2) inset;
+}
+
+.card {
+  border: 1px solid $border-color;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr 1fr;
+
+  & > :nth-child(n) {
+    padding: $padding;
+    @include flex-center();
+  }
+}
+
+.selected {
+  height: 110%;
+  box-shadow: -1px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.header {
+  @include box-shadow();
+
+  color: $text-header;
+}
+
+.cost {
+  color: $text-header;
+  display: flex;
+  justify-content: center;
+
+  sub {
+    align-self: flex-end;
+  }
+}
+
+.cost__number {
+  font-size: 3em;
+}
+
+.green {
+  background-color: $green;
+}
+.blue {
+  background-color: $blue;
+}
+.black {
+  background-color: $black;
+}
+.red {
+  background-color: $red;
+}
+
+.speed {
+  background-color: $light-gray;
+  color: $text-main;
+}
+.optional {
+  background-color: $dark-gray;
+  color: $text-main;
+}
