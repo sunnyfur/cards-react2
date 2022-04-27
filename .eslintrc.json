@@ -1,11 +1,11 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true
+    "browser": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/recommended",
@@ -13,15 +13,18 @@
     "plugin:react/jsx-runtime",
     "prettier"
   ],
+
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
+
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": "off"
   }
 }
