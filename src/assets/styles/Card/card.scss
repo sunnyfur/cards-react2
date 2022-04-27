@@ -19,6 +19,18 @@ $padding: 20px;
 @mixin box-shadow() {
   box-shadow: 0 0 0 128px rgba(0, 0, 0, 0.2) inset;
 }
+.green {
+  background-color: $green;
+}
+.blue {
+  background-color: $blue;
+}
+.black {
+  background-color: $black;
+}
+.red {
+  background-color: $red;
+}
 
 .card {
   border: 1px solid $border-color;
@@ -39,7 +51,7 @@ $padding: 20px;
 
 .header {
   @include box-shadow();
-
+  font-size: larger;
   color: $text-header;
 }
 
@@ -55,19 +67,6 @@ $padding: 20px;
 
 .cost__number {
   font-size: 3em;
-}
-
-.green {
-  background-color: $green;
-}
-.blue {
-  background-color: $blue;
-}
-.black {
-  background-color: $black;
-}
-.red {
-  background-color: $red;
 }
 
 .speed {
