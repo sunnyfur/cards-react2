@@ -1,4 +1,5 @@
 import * as classnames from 'classnames';
+
 import styles from '../assets/styles/card.module.scss';
 
 const Card = ({
