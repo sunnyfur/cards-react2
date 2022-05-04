@@ -12,8 +12,13 @@ const Card = ({
   optional,
   isSelected,
   color = 'green',
+  onClick,
 }) => (
-  <div className={classnames(styles.card, { [styles.selected]: isSelected })}>
+  <div
+    onClick={onClick}
+    aria-hidden='true'
+    className={classnames(styles.card, { [styles.selected]: isSelected })}
+  >
     <div className={classnames(styles.header, styles[color])}>{name}</div>
 
     <div className={styles[color]}>
