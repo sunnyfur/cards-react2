@@ -8,16 +8,16 @@ import rates from '../mock/rates.json';
 const colors = ['blue', 'green', 'red', 'black'];
 
 const CardList = () => {
-  const [indexSelected, setIndexSelected] = useState(0);
-  const handleChange = (index) => {
-    setIndexSelected(index);
+  const [nameCard, nameCardSelected] = useState();
+  const handleChange = (name) => {
+    nameCardSelected(name);
   };
 
   return (
     <div className={styles.wrapper}>
       {rates.results.map((rate, index) => (
         <Card
-          onClick={() => handleChange(index)}
+          onClick={handleChange}
           key={index.toString}
           name={rate.name}
           cost={rate.cost}
@@ -26,7 +26,7 @@ const CardList = () => {
           speed={rate.speed}
           speedUnits={rate.speedUnits}
           optional={rate.optional}
-          isSelected={index === indexSelected}
+          isSelected={rate.name === nameCard}
           color={colors[index]}
         />
       ))}

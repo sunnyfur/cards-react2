@@ -13,27 +13,32 @@ const Card = ({
   isSelected,
   color = 'green',
   onClick,
-}) => (
-  <div
-    onClick={onClick}
-    aria-hidden='true'
-    className={classnames(styles.card, { [styles.selected]: isSelected })}
-  >
-    <div className={classnames(styles.header, styles[color])}>{name}</div>
+}) => {
+  const handleClick = () => {
+    onClick(name);
+  };
+  return (
+    <div
+      onClick={handleClick}
+      aria-hidden='true'
+      className={classnames(styles.card, { [styles.selected]: isSelected })}
+    >
+      <div className={classnames(styles.header, styles[color])}>{name}</div>
 
-    <div className={styles[color]}>
-      <div className={styles.cost}>
-        <sup>{currency}</sup>
-        <span className={styles.cost__number}>{cost}</span>
-        <sub>{`/${length}`}</sub>{' '}
+      <div className={styles[color]}>
+        <div className={styles.cost}>
+          <sup>{currency}</sup>
+          <span className={styles.cost__number}>{cost}</span>
+          <sub>{`/${length}`}</sub>{' '}
+        </div>
       </div>
+
+      <div className={styles.speed}>{`до ${speed} ${speedUnits}`} </div>
+
+      <div className={styles.optional}>{optional}</div>
     </div>
-
-    <div className={styles.speed}>{`до ${speed} ${speedUnits}`} </div>
-
-    <div className={styles.optional}>{optional}</div>
-  </div>
-);
+  );
+};
 
 export default Card;
 //
